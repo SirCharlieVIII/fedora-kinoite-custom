@@ -1,0 +1,66 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+name: fedora-kinoite-custom
+description: Custom Fedora Kinoite image with gaming and productivity tools
+
+base-image: ghcr.io/ublue-os/kinoite-main
+image-version: latest # always track the latest stable Fedora Kinoite
+
+modules:
+  # ── RPM packages layered into the image ───────────────────────────────────
+  - type: rpm-ostree
+    repos:
+      # Steam requires RPM Fusion Free
+      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    install:
+      - fastfetch
+      - gamemode
+      - gamemoded     # gamemode daemon
+      - gamescope
+      - openvpn
+      - steam
+      - wireguard-tools
+
+  # ── Flatpaks installed at first boot via systemd service ──────────────────
+  - type: default-flatpaks
+    configurations:
+      - scope: system
+        # Flathub is already configured in Universal Blue images; this just
+        # ensures the remote is present and installs our app list.
+        repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        repo-name: flathub
+        install:
+- com.heroicgameslauncher.hgl
+          - com.vencord.Vesktop
+          - com.vscodium.codium
+          - io.github.benjamimgois.goverlay
+          - io.github.DenysMb.Kontainer
+          - md.obsidian.Obsidian
+          - net.davidotek.pupgui2
+          - org.fedoraproject.MediaWriter
+          - org.freedesktop.Platform.VulkanLayer.MangoHud
+          - org.kde.gwenview
+          - org.kde.kcalc
+          - org.kde.kolourpaint
+          - org.kde.krita
+          - org.kde.krdc
+          - org.kde.okular
+          - org.libreoffice.LibreOffice
+          - org.prismlauncher.PrismLauncher
+          - org.videolan.VLC
+          - org.virt_manager.virt-manager
+          - org.virt_manager.virt_manager.Extension.Qemu
+          - tv.plex.PlexDesktop
+
+  # ── Customise /etc/os-release so the image identifies itself correctly ────
+  - type: os-release
+    id: fedora-kinoite-custom
+    name: Fedora Kinoite (Custom)
+    pretty-name: My Custom Fedora Kinoite
+    variant: KDE Plasma
+    variant-id: kinoite
+
+  # ── Embed signing keys so rebased installs can verify image integrity ─────
+  - type: signing

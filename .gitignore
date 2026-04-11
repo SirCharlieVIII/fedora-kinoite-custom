@@ -1,0 +1,8 @@
+# cosign private key — NEVER commit this
+cosign.key
+
+# Editor artifacts
+.vscode/
+.idea/
+*.swp
+*~
