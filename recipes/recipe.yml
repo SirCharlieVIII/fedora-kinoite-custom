@@ -30,8 +30,8 @@ modules:
         scope: system
         install:
           - com.heroicgameslauncher.hgl
-          - com.vencord.Vesktop
           - com.vscodium.codium
+          - dev.vencord.Vesktop
           - io.github.benjamimgois.goverlay
           - io.github.DenysMb.Kontainer
           - md.obsidian.Obsidian
