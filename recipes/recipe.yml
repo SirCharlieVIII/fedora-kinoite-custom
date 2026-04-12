@@ -55,11 +55,9 @@ modules:
   # ── Customise /etc/os-release so the image identifies itself correctly ────
   - type: os-release
   - properties:
-      id: fedora-kinoite-custom
-      name: Fedora Kinoite Custom
-      pretty-name: My Custom Fedora Kinoite
-      variant: KDE Plasma
-      variant-id: kinoite
+      id: fedora_kinoite_custom
+      name: FedoraKinoiteCustom
+      pretty-name: Fedora Kinoite Custom Image
 
   # ── Embed signing keys so rebased installs can verify image integrity ─────
   - type: signing
