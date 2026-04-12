@@ -15,7 +15,6 @@ modules:
         - fastfetch
         - gamemode
         - gamemoded
-        - OpenCL-ICD-Loader
         - openvpn
         - steam
         - wireguard-tools

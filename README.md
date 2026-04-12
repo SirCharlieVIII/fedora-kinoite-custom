@@ -14,7 +14,6 @@ A custom [Fedora Kinoite](https://fedoraproject.org/kinoite/) image built with
 | `fastfetch` | System info display |
 | `gamemode` / `gamemoded` | Feral GameMode for gaming performance |
 | `gamescope` | Valve's micro-compositor |
-| `OpenCL-ICD-Loader` | Enables GPU compute workloads |
 | `openvpn` | VPN client |
 | `steam` | Gaming platform (via RPM Fusion) |
 | `wireguard-tools` | VPN client |
