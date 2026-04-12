@@ -8,31 +8,35 @@ base-image: ghcr.io/ublue-os/kinoite-main
 image-version: latest # always track the latest stable Fedora Kinoite
 
 modules:
-  # ── RPM packages layered into the image ───────────────────────────────────
-  - type: rpm-ostree
+  # ── DNF packages layered into the image ───────────────────────────────────
+  - type: dnf
     repos:
-      # Steam requires RPM Fusion Free
       - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
       - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     install:
-      - fastfetch
-      - gamemode
-      - gamemoded     # gamemode daemon
-      - gamescope
-      - openvpn
-      - steam
-      - wireguard-tools
+      packages:
+        - fastfetch
+        - gamemode
+        - gamemoded
+        - openvpn
+        - steam
+        - wireguard-tools
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks
 
   # ── Flatpaks installed at first boot via systemd service ──────────────────
   - type: default-flatpaks
     configurations:
-      - scope: system
+      - notify: true
+        scope: system
         # Flathub is already configured in Universal Blue images; this just
         # ensures the remote is present and installs our app list.
         repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
         repo-name: flathub
         install:
-- com.heroicgameslauncher.hgl
+          - com.heroicgameslauncher.hgl
           - com.vencord.Vesktop
           - com.vscodium.codium
           - io.github.benjamimgois.goverlay
@@ -40,6 +44,7 @@ modules:
           - md.obsidian.Obsidian
           - net.davidotek.pupgui2
           - org.fedoraproject.MediaWriter
+          - org.mozilla.firefox
           - org.freedesktop.Platform.VulkanLayer.MangoHud
           - org.kde.gwenview
           - org.kde.kcalc
