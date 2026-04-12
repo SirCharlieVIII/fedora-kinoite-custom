@@ -10,9 +10,6 @@ image-version: latest # always track the latest stable Fedora Kinoite
 modules:
   # ── DNF packages layered into the image ───────────────────────────────────
   - type: dnf
-    repos:
-      - url: https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-      - url: https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     install:
       packages:
         - fastfetch
