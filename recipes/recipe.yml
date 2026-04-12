@@ -11,7 +11,7 @@ modules:
   # ── DNF packages layered into the image ───────────────────────────────────
   - type: dnf
     repos:
-      - url: https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+      - url: https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
       - url: https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     install:
       packages:
@@ -31,10 +31,6 @@ modules:
     configurations:
       - notify: true
         scope: system
-        # Flathub is already configured in Universal Blue images; this just
-        # ensures the remote is present and installs our app list.
-        repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-        repo-name: flathub
         install:
           - com.heroicgameslauncher.hgl
           - com.vencord.Vesktop
@@ -63,7 +59,7 @@ modules:
   - type: os-release
   - properties:
       id: fedora-kinoite-custom
-      name: Fedora Kinoite (Custom)
+      name: Fedora Kinoite Custom
       pretty-name: My Custom Fedora Kinoite
       variant: KDE Plasma
       variant-id: kinoite
