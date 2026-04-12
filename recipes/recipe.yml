@@ -38,7 +38,7 @@ modules:
           - net.davidotek.pupgui2
           - org.fedoraproject.MediaWriter
           - org.mozilla.firefox
-          - runtime/org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/25.08
+          - org.freedesktop.Platform.VulkanLayer.MangoHud//25.08
           - org.kde.gwenview
           - org.kde.kcalc
           - org.kde.kolourpaint
