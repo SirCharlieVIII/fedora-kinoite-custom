@@ -6,3 +6,4 @@ cosign.key
 .idea/
 *.swp
 *~
+/.bluebuild-scripts_*
