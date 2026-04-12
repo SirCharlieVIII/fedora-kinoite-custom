@@ -58,7 +58,7 @@ modules:
     properties:
       id: fedora_kinoite_custom
       name: FedoraKinoiteCustom
-      pretty-name: Fedora Kinoite Custom Image
+      pretty-name: "Fedora Kinoite Custom Image"
 
   # ── Embed signing keys so rebased installs can verify image integrity ─────
   - type: signing
