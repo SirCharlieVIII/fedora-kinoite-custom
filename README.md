@@ -74,7 +74,7 @@ systemctl reboot
 
 ---
 
-## Customisation
+## Customization
 
 Edit `recipe.yml` to add or remove packages and Flatpaks, then push to `main`.
 GitHub Actions will rebuild automatically. Your system will pick up the new
