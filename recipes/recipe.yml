@@ -15,6 +15,7 @@ modules:
         - fastfetch
         - gamemode
         - gamemoded
+        - opencl-icd-loader
         - openvpn
         - steam
         - wireguard-tools
@@ -38,7 +39,7 @@ modules:
           - net.davidotek.pupgui2
           - org.fedoraproject.MediaWriter
           - org.mozilla.firefox
-          - org.freedesktop.Platform.VulkanLayer.MangoHud
+          - runtime/org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/25.08
           - org.kde.gwenview
           - org.kde.kcalc
           - org.kde.kolourpaint
