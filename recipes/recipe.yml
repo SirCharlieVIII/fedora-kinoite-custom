@@ -54,7 +54,7 @@ modules:
 
   # ── Customise /etc/os-release so the image identifies itself correctly ────
   - type: os-release
-  - properties:
+    properties:
       id: fedora_kinoite_custom
       name: FedoraKinoiteCustom
       pretty-name: Fedora Kinoite Custom Image
