@@ -34,6 +34,7 @@ modules:
           - io.github.benjamimgois.goverlay                       # GOverlay
           - org.kde.gwenview                                      # Gwenview
           - com.heroicgameslauncher.hgl                           # Heroic Games Launcher
+          - org.kde.kate                                          # Kate
           - org.kde.kcalc                                         # KCalc
           - org.kde.kolourpaint                                   # Kolour Paint
           - io.github.DenysMb.Kontainer                           # Kontainer

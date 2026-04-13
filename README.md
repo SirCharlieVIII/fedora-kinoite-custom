@@ -25,6 +25,7 @@ A custom [Fedora Kinoite](https://fedoraproject.org/kinoite/) image built with
 | GOverlay | MangoHud/vkBasalt GUI config |
 | Gwenview | Image viewer |
 | Heroic Games Launcher | Epic/GOG/Amazon games |
+| Kate | Advanced text editor
 | KCalc | Calculator |
 | KolourPaint | Simple image editor |
 | Kontainer | Distrobox GUI frontend |
